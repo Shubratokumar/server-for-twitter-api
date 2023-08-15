@@ -1,8 +1,13 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const OAuth = require("oauth-1.0a");
 const crypto = require("crypto");
 const axios = require("axios");
+
+// middleware
+app.use(cors());
+app.use(express.json());
 
 const consumer_key = `oodln5TJZ5T4dLPOxhKKSTGeb`;
 const consumer_secret = `DzuYLDGh540lw0CgVxj1Hwn9cCqkAaPXONPTKZc8vVDzh84HND`;
