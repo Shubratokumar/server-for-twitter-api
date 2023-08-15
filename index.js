@@ -18,27 +18,27 @@ const oauth = OAuth({
     return crypto.createHmac("sha1", key).update(base_string).digest("base64");
   },
 });
-async function getRequestToken() {
-  const requestData = {
-    url: "https://api.twitter.com/oauth/request_token",
-    method: "POST",
-    data: {
-      oauth_callback: redirectUri,
-    },
-  };
-  const oauthHeader = oauth.toHeader(oauth.authorize(requestData));
+// twitter request token
+app.get("/token", async (req, res) => {
   try {
+    const requestData = {
+      url: "https://api.twitter.com/oauth/request_token",
+      method: "POST",
+      data: {
+        oauth_callback: redirectUri,
+      },
+    };
+    const oauthHeader = oauth.toHeader(oauth.authorize(requestData));
     const response = await axios.post(requestData.url, requestData.data, {
       headers: oauthHeader,
     });
     const responseData = response.data;
-    console.log("Response Data:", responseData);
+    res.send(responseData);
   } catch (error) {
     console.error("Error:", error);
   }
-}
+});
 
-getRequestToken();
 app.get("/", (request, response) => {
   response.send("Hi there, this a simple server for twitter api testing.");
 });
