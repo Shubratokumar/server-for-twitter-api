@@ -11,7 +11,7 @@ app.use(express.json());
 
 const consumer_key = `oodln5TJZ5T4dLPOxhKKSTGeb`;
 const consumer_secret = `DzuYLDGh540lw0CgVxj1Hwn9cCqkAaPXONPTKZc8vVDzh84HND`;
-const redirectUri = `https://1269-202-134-14-140.ngrok-free.app/gala/contact`;
+const redirectUri = `https://de8b-202-134-9-144.ngrok-free.app/gala/contact`;
 // Oauth
 const oauth = OAuth({
   consumer: {
