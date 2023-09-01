@@ -6,7 +6,7 @@ const axios = require("axios");
 
 const consumer_key = `oodln5TJZ5T4dLPOxhKKSTGeb`;
 const consumer_secret = `DzuYLDGh540lw0CgVxj1Hwn9cCqkAaPXONPTKZc8vVDzh84HND`;
-const redirectUri = `https://8bda-202-134-14-139.ngrok-free.app/gala/contact`;
+const redirectUri = `https://8959-202-134-8-139.ngrok-free.app/gala/contact`;
 // Oauth
 const oauth = OAuth({
   consumer: {
